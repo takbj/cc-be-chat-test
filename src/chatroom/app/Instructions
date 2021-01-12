@@ -1,0 +1,44 @@
+Instructions 
+	1. From the time that you receive this exercise document, you have 24 hours to complete it and return the final deliverables. 
+	2. Your final delivery should be a git repository 
+	3. Take note of all NPM packages that you add, you will be expected to explain what they are and why you used them
+Objective
+	Implement a Chat System.
+
+Note: You will not be judged on any client UI of your delivery.
+	We have provided a Github repo that contains a basic CLI for you to use. Please fork this repo as a starting point for your project: https://github.com/CloudcadeSF/cc-be-chat-test
+	1. Chat System Features
+		a. Chat messaging should be socket based
+			i. Please use `ws` npm package for socket library, you may not use any other socket/chat libraries
+		b. All users in a chat should be able to do the following:
+			i. Upon joining a chat room, the server should send back a list of the last 50 messages sent prior to joining the chat
+			ii. Send messages to all other connected chat users
+			iii. Receive messages from all other connected chat users
+		c. Profanity Filter 
+			i. Detect & replace the profanity words listed with asterisk * character
+				1. Words list file: https://github.com/RobertJGabriel/Google-profanity-words/blob/ma ster/list.txt
+				2. E.g. “hellboy” -> “****boy” or “*******” 
+			ii. Note: You cannot use a npm package to solve this, please implement your own solution
+		d. Forward slash character “/” prefix chat commands
+			i. /popular
+				1. Print the most popular word as the response when a /popular chat command is sent. 
+				2. Most popular word is defined as the word that's been chatted the most only in the last 5 second period (not since the beginning of time)
+			ii. /stats [username]
+				1. Print how long the user has been logged in with the string format “00d 00h 00m 00s”
+				2. E.g.a.
+					/stats john123
+						i. 00d 02h 48m 23s
+	2. Unit tests
+		a. Test-driven development is integral to our backend development process, so please think of this and implement unit tests for your code base
+		b. We currently use `ava` for testing, but feel free to use whatever testing framework you prefer (be sure to document).
+	3. Documentation
+		a. Please document your implementation to the best of your ability such that the reviewer will be able to comprehend the nuances of: 
+			i. System design decisions
+			ii. Optimization/Efficiency
+			iii. Scaling Concerns
+			iv. List of all NPM packages added and why
+Evaluation Considerations
+	1. Implementation efficiency (“How well does it scale?”)
+	2. Unit test coverage
+	3. Code quality
+	4. Feature set/usability
